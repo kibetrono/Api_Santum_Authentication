@@ -7,6 +7,18 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+
+    /**
+     * Search for name.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function search($name)
+    {
+        return Product::where('name','like','%'.$name.'%')->get();
+    }
+
+
     /**
      * Display a listing of the resource.
      *
