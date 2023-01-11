@@ -21,7 +21,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// This are the unprotected/public routes
+// This are unprotected/public routes
 Route::get('/products',[ProductController::class,'index']);
 Route::get('/products/search/{name}', [ProductController::class, 'search']);
 Route::post('/register', [SanctumAuthController::class, 'register']);
